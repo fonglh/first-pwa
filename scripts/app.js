@@ -346,5 +346,11 @@
   }
 
 
-  // TODO add service worker code here
+  // add service worker code here
+  // Check if browser supports service workers, and register the worker if it does.
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./service-worker.js')
+             .then(function() { console.log('Service Worker Registered'); });
+  }
 })();
